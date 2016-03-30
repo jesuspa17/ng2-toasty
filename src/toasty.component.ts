@@ -12,29 +12,30 @@ import {ToastData} from './toasty.service';
  * A Toast component shows message with title and close button.
  */
 @Component({
-    selector: 'ng2-toast',
-    directives: [CORE_DIRECTIVES],
-    template: `
-        <div class="toast" [ngClass]="[toast.type, toast.theme]">
-            <div *ngIf="toast.showClose" class="close-button" (click)="close($event)"></div>
-            <div *ngIf="toast.title || toast.msg" class="toast-text">
-                <span *ngIf="toast.title" class="toast-title">{{toast.title}}</span>
-                <br *ngIf="toast.title && toast.msg" />
-                <span *ngIf="toast.msg" class="toast-msg">{{toast.msg}}</span>
-            </div>
-        </div>`
+  selector: 'ng2-toast',
+  directives: [CORE_DIRECTIVES],
+  template: `
+    <div class="toast" [ngClass]="[toast.type, toast.theme]">
+      <div *ngIf="toast.showClose" class="close-button" (click)="close($event)"></div>
+      <div *ngIf="toast.title || toast.msg" class="toast-text">
+        <span *ngIf="toast.title" class="toast-title">{{toast.title}}</span>
+        <br *ngIf="toast.title && toast.msg" />
+        <span *ngIf="toast.msg" class="toast-msg">{{toast.msg}}</span>
+      </div>
+    </div>
+  `
 })
 export class Toast {
 
-    @Input() toast:ToastData;
-    @Output('closeToast') closeToastEvent = new EventEmitter();
+  @Input() toast: ToastData;
+  @Output('closeToast') closeToastEvent = new EventEmitter();
 
-    /**
-     * Event handler invokes when user clicks on close button.
-     * This method emit new event into ToastyContainer to close it.
-     */
-    close($event:any) {
-        $event.preventDefault();
-        this.closeToastEvent.next(this.toast);
-    }
+  /**
+   * Event handler invokes when user clicks on close button.
+   * This method emit new event into ToastyContainer to close it.
+   */
+  close($event: any) {
+    $event.preventDefault();
+    this.closeToastEvent.next(this.toast);
+  }
 }

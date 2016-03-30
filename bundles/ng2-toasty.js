@@ -1,4 +1,5 @@
 System.registerDynamic("src/toasty.container", ["angular2/core", "angular2/common", "angular2/src/facade/lang", "./toasty.config", "./toasty.service", "./toasty.component"], true, function($__require, exports, module) {
+  "use strict";
   ;
   var global = this,
       __define = global.define;
@@ -102,13 +103,14 @@ System.registerDynamic("src/toasty.container", ["angular2/core", "angular2/commo
       template: "\n    <div id=\"toasty\" [ngClass]=\"[position]\">\n        <ng2-toast *ngFor=\"#toast of toasts\" [toast]=\"toast\" (closeToast)=\"closeToast(toast)\"></ng2-toast>\n    </div>"
     }), __metadata('design:paramtypes', [toasty_config_1.ToastyConfig, toasty_service_1.ToastyService])], Toasty);
     return Toasty;
-  })();
+  }());
   exports.Toasty = Toasty;
   global.define = __define;
   return module.exports;
 });
 
 System.registerDynamic("src/toasty.component", ["angular2/core", "angular2/common"], true, function($__require, exports, module) {
+  "use strict";
   ;
   var global = this,
       __define = global.define;
@@ -147,13 +149,14 @@ System.registerDynamic("src/toasty.component", ["angular2/core", "angular2/commo
       template: "\n        <div class=\"toast\" [ngClass]=\"[toast.type, toast.theme]\">\n            <div *ngIf=\"toast.showClose\" class=\"close-button\" (click)=\"close($event)\"></div>\n            <div *ngIf=\"toast.title || toast.msg\" class=\"toast-text\">\n                <span *ngIf=\"toast.title\" class=\"toast-title\">{{toast.title}}</span>\n                <br *ngIf=\"toast.title && toast.msg\" />\n                <span *ngIf=\"toast.msg\" class=\"toast-msg\">{{toast.msg}}</span>\n            </div>\n        </div>"
     }), __metadata('design:paramtypes', [])], Toast);
     return Toast;
-  })();
+  }());
   exports.Toast = Toast;
   global.define = __define;
   return module.exports;
 });
 
 System.registerDynamic("src/toasty.config", ["angular2/core"], true, function($__require, exports, module) {
+  "use strict";
   ;
   var global = this,
       __define = global.define;
@@ -185,13 +188,14 @@ System.registerDynamic("src/toasty.config", ["angular2/core"], true, function($_
     }
     ToastyConfig = __decorate([core_1.Injectable(), __metadata('design:paramtypes', [])], ToastyConfig);
     return ToastyConfig;
-  })();
+  }());
   exports.ToastyConfig = ToastyConfig;
   global.define = __define;
   return module.exports;
 });
 
 System.registerDynamic("src/toasty.service", ["angular2/core", "angular2/src/facade/lang", "rxjs/Observable", "./toasty.config"], true, function($__require, exports, module) {
+  "use strict";
   ;
   var global = this,
       __define = global.define;
@@ -311,7 +315,7 @@ System.registerDynamic("src/toasty.service", ["angular2/core", "angular2/src/fac
     ToastyService.THEMES = ['default', 'material', 'bootstrap'];
     ToastyService = __decorate([core_1.Injectable(), __metadata('design:paramtypes', [toasty_config_1.ToastyConfig])], ToastyService);
     return ToastyService;
-  })();
+  }());
   exports.ToastyService = ToastyService;
   global.define = __define;
   return module.exports;
