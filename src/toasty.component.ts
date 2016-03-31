@@ -5,7 +5,6 @@
 import {Component, Input, Output, EventEmitter} from 'angular2/core';
 import {CORE_DIRECTIVES} from 'angular2/common';
 
-import {ToastyConfig} from './toasty.config';
 import {ToastData} from './toasty.service';
 
 /**

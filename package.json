@@ -1,6 +1,6 @@
 {
   "name": "ng2-toasty",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Angular2 Toasty component shows growl-style alerts and messages for your app.",
   "scripts": {
     "test": "tsc && karma start",
