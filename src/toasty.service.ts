@@ -91,48 +91,48 @@ export class ToastyService {
   /**
    * Create Toast of a default type
    */
-  default(options: ToastOptions|string|number): void {
-    this.add(options, 'default');
+  default(options: ToastOptions|string|number): number {
+    return this.add(options, 'default');
   }
 
   /**
    * Create Toast of info type
    * @param  {object} options Individual toasty config overrides
    */
-  info(options: ToastOptions|string|number): void {
-    this.add(options, 'info');
+  info(options: ToastOptions|string|number): number {
+    return this.add(options, 'info');
   }
 
   /**
    * Create Toast of success type
    * @param  {object} options Individual toasty config overrides
    */
-  success(options: ToastOptions|string|number): void {
-    this.add(options, 'success');
+  success(options: ToastOptions|string|number): number {
+    return this.add(options, 'success');
   }
 
   /**
    * Create Toast of wait type
    * @param  {object} options Individual toasty config overrides
    */
-  wait(options: ToastOptions|string|number): void {
-    this.add(options, 'wait');
+  wait(options: ToastOptions|string|number): number {
+    return this.add(options, 'wait');
   }
 
   /**
    * Create Toast of error type
    * @param  {object} options Individual toasty config overrides
    */
-  error(options: ToastOptions|string|number): void {
-    this.add(options, 'error');
+  error(options: ToastOptions|string|number): number {
+    return this.add(options, 'error');
   }
 
   /**
    * Create Toast of warning type
    * @param  {object} options Individual toasty config overrides
    */
-  warning(options: ToastOptions|string|number): void {
-    this.add(options, 'warning');
+  warning(options: ToastOptions|string|number): number {
+    return this.add(options, 'warning');
   }
 
 
@@ -190,6 +190,8 @@ export class ToastyService {
     if (toastyOptions.onAdd && isFunction(toastyOptions.onAdd)) {
       toastyOptions.onAdd.call(this, toast);
     }
+
+    return toast.id;
   }
 
   // Clear all toasts
