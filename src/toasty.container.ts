@@ -69,9 +69,13 @@ export class Toasty implements OnInit {
       }
     });
     // We listen clear all comes from service here.
-    this.toastyService.getClear().subscribe(() => {
+    this.toastyService.getClear().subscribe((id) => {
       // Lets clear all toasts
-      this.clearAll();
+      if (id === null || id === undefined) {
+        this.clearAll();
+      } else {
+        this.clear(id);
+      }
     });
     if (this.position) {
       let notFound: boolean = true;

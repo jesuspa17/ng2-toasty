@@ -52,14 +52,14 @@ export class ToastyService {
   private toastsObservable: Observable<ToastData>;
   private toastsSubscriber: Subscriber<ToastData>;
 
-  private clearObservable: Observable<void>;
-  private clearSubscriber: Subscriber<void>;
+  private clearObservable: Observable<number>;
+  private clearSubscriber: Subscriber<number>;
 
   constructor(private config: ToastyConfig) {
     this.toastsObservable = new Observable((subscriber: Subscriber<ToastData>) => {
       this.toastsSubscriber = subscriber;
     });
-    this.clearObservable = new Observable<void>((subscriber: Subscriber<void>) => {
+    this.clearObservable = new Observable((subscriber: Subscriber<number>) => {
       this.clearSubscriber = subscriber;
     });
   }
@@ -71,60 +71,60 @@ export class ToastyService {
     return this.toastsObservable;
   }
 
-  getClear(): Observable<void> {
+  getClear(): Observable<number> {
     return this.clearObservable;
   }
 
   /**
    * Create Toast of a default type
    */
-  default(options: ToastOptions|string|number): void {
-    this.add(options, 'default');
+  default(options: ToastOptions|string|number): number {
+    return this.add(options, 'default');
   }
 
   /**
    * Create Toast of default type
    * @param  {object} options Individual toasty config overrides
    */
-  info(options: ToastOptions|string|number): void {
-    this.add(options, 'info');
+  info(options: ToastOptions|string|number): number {
+    return this.add(options, 'info');
   }
 
   /**
    * Create Toast of success type
    * @param  {object} options Individual toasty config overrides
    */
-  success(options: ToastOptions|string|number): void {
-    this.add(options, 'success');
+  success(options: ToastOptions|string|number): number {
+    return this.add(options, 'success');
   }
 
   /**
    * Create Toast of wait type
    * @param  {object} options Individual toasty config overrides
    */
-  wait(options: ToastOptions|string|number): void {
-    this.add(options, 'wait');
+  wait(options: ToastOptions|string|number): number {
+    return this.add(options, 'wait');
   }
 
   /**
    * Create Toast of error type
    * @param  {object} options Individual toasty config overrides
    */
-  error(options: ToastOptions|string|number): void {
-    this.add(options, 'error');
+  error(options: ToastOptions|string|number): number {
+    return this.add(options, 'error');
   }
 
   /**
    * Create Toast of warning type
    * @param  {object} options Individual toasty config overrides
    */
-  warning(options: ToastOptions|string|number): void {
-    this.add(options, 'warning');
+  warning(options: ToastOptions|string|number): number {
+    return this.add(options, 'warning');
   }
 
 
   // Add a new toast item
-  private add(options: ToastOptions|string|number, type: string) {
+  private add(options: ToastOptions|string|number, type: string): number {
     var toastyOptions: ToastOptions;
 
     if (isString(options) && options !== '' || isNumber(options)) {
@@ -184,12 +184,19 @@ export class ToastyService {
     } catch (e) {
       console.log(e);
       console.log('!!! Suggestion: Seems you forget add <ng2-toasty></ng2-toasty> into your html?');
+      toast.id = null;
     }
+
+    return toast.id;
   }
 
   // Clear all toasts
   clearAll() {
     this.clearSubscriber.next();
+  }
+
+  clear(id: number) {
+    if (id) this.clearSubscriber.next(id);
   }
 
   // Checks whether the local option is set, if not,
