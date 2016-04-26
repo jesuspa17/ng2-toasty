@@ -1,6 +1,6 @@
 {
   "name": "ng2-toasty",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Angular2 Toasty component shows growl-style alerts and messages for your app.",
   "scripts": {
     "test": "tsc && karma start",
@@ -28,21 +28,21 @@
   "typings": "./ng2-toasty.d.ts",
   "homepage": "https://github.com/akserg/ng2-toasty",
   "peerDependencies": {
-    "angular2": "~2.0.0-beta.15",
-    "core-js": "^2.2.2",
+    "angular2": "~2.0.0-beta.16",
+    "core-js": "^2.3.0",
     "moment": "^2.13.0",
     "rxjs": "5.0.0-beta.2",
     "zone.js": "~0.6.12"
   },
   "dependencies": {
-    "angular2": "2.0.0-beta.15",
-    "core-js": "^2.2.2",
+    "angular2": "2.0.0-beta.16",
+    "core-js": "^2.3.0",
     "moment": "^2.13.0",
     "rxjs": "5.0.0-beta.2",
     "zone.js": "0.6.12"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^1.1.5",
+    "cz-conventional-changelog": "^1.1.6",
     "es6-promise": "~3.1.2",
     "es6-shim": "~0.35.0",
     "es7-reflect-metadata": "^1.6.0",
