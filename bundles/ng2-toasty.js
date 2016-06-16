@@ -94,7 +94,6 @@ System.registerDynamic("src/toasty.container", ["angular2/core", "angular2/commo
     Toasty.prototype._setTimeout = function(toast) {
       var _this = this;
       window.setTimeout(function() {
-        console.log('clear', toast.id);
         _this.clear(toast.id);
       }, toast.timeout);
     };
