@@ -23,9 +23,9 @@ var ToastyConfig = (function () {
         // Whether to show the 'X' icon to close the toast
         this.showClose = true;
         // The window position where the toast pops up. Possible values
-        // bottom-right, bottom-left, top-right, top-left, top-center, bottom-center
+        // bottom-right, bottom-left, top-right, top-left, top-center, bottom-center, center-center
         this.position = 'bottom-right';
-        // How long (in miliseconds) the toasty shows before it's removed. Set to false to disable.
+        // How long (in miliseconds) the toasty shows before it's removed. Set to null/0 to turn off.
         this.timeout = 5000;
         // What theme to use. Possible values:
         // default, material or bootstrap
@@ -67,7 +67,7 @@ var ToastyService = (function () {
         return this.add(options, 'default');
     };
     /**
-     * Create Toast of default type
+     * Create Toast of info type
      * @param  {object} options Individual toasty config overrides
      */
     ToastyService.prototype.info = function (options) {

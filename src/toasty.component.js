@@ -38,6 +38,7 @@ var ToastyComponent = (function () {
         // - top-left
         // - top-center
         // - bottom-center
+        // - center-center
         set: function (value) {
             if (value) {
                 var notFound = true;
@@ -143,7 +144,7 @@ var ToastyComponent = (function () {
     /**
      * Set of constants defins position of Toasty on the page.
      */
-    ToastyComponent.POSITIONS = ['bottom-right', 'bottom-left', 'top-right', 'top-left', 'top-center', 'bottom-center'];
+    ToastyComponent.POSITIONS = ['bottom-right', 'bottom-left', 'top-right', 'top-left', 'top-center', 'bottom-center', 'center-center'];
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String), 
@@ -151,7 +152,6 @@ var ToastyComponent = (function () {
     ], ToastyComponent.prototype, "position", null);
     ToastyComponent = __decorate([
         core_1.Component({
-            moduleId: module.id.toString(),
             selector: 'ng2-toasty',
             template: "\n    <div id=\"toasty\" [ngClass]=\"[position]\">\n        <ng2-toast *ngFor=\"let toast of toasts\" [toast]=\"toast\" (closeToast)=\"closeToast(toast)\"></ng2-toast>\n    </div>"
         }), 

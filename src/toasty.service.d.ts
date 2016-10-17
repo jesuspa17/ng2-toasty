@@ -56,7 +56,7 @@ export declare class ToastyService {
      */
     default(options: ToastOptions | string | number): number;
     /**
-     * Create Toast of default type
+     * Create Toast of info type
      * @param  {object} options Individual toasty config overrides
      */
     info(options: ToastOptions | string | number): number;
