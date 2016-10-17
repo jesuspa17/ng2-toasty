@@ -34,11 +34,11 @@
     "zone.js": "^0.6.25"
   },
   "devDependencies": {
-    "@angular/common": "2.0.0",
-    "@angular/compiler": "2.0.0",
-    "@angular/core": "2.0.0",
-    "@angular/platform-browser": "2.0.0",
-    "@angular/platform-browser-dynamic": "2.0.0",
+    "@angular/common": "2.0.2",
+    "@angular/compiler": "2.0.2",
+    "@angular/core": "2.0.2",
+    "@angular/platform-browser": "2.0.2",
+    "@angular/platform-browser-dynamic": "2.0.2",
     "commitizen": "^2.7.6",
     "cz-conventional-changelog": "^1.1.5",
     "jasmine-core": "~2.5.1",
