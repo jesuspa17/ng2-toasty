@@ -11,8 +11,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var toasty_utils_1 = require('./toasty.utils');
+var core_1 = require("@angular/core");
+var toasty_utils_1 = require("./toasty.utils");
 /**
  * Default configuration foa all toats and toasty container
  */
@@ -31,12 +31,12 @@ var ToastyConfig = (function () {
         // default, material or bootstrap
         this.theme = 'default';
     }
-    ToastyConfig = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], ToastyConfig);
     return ToastyConfig;
 }());
+ToastyConfig = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], ToastyConfig);
 exports.ToastyConfig = ToastyConfig;
 /**
  * Toasty service helps create different kinds of Toasts
@@ -171,13 +171,13 @@ var ToastyService = (function () {
             return true;
         }
     };
-    // Allowed THEMES
-    ToastyService.THEMES = ['default', 'material', 'bootstrap'];
-    ToastyService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [ToastyConfig])
-    ], ToastyService);
     return ToastyService;
 }());
+// Allowed THEMES
+ToastyService.THEMES = ['default', 'material', 'bootstrap'];
+ToastyService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [ToastyConfig])
+], ToastyService);
 exports.ToastyService = ToastyService;
 //# sourceMappingURL=toasty.service.js.map
