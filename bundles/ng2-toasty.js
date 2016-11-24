@@ -68,9 +68,9 @@ System.registerDynamic("src/toasty.service", ["@angular/core", "./toasty.utils"]
             // default, material or bootstrap
             this.theme = 'default';
         }
-        ToastyConfig = __decorate([core_1.Injectable(), __metadata('design:paramtypes', [])], ToastyConfig);
         return ToastyConfig;
     }();
+    ToastyConfig = __decorate([core_1.Injectable(), __metadata("design:paramtypes", [])], ToastyConfig);
     exports.ToastyConfig = ToastyConfig;
     /**
      * Toasty service helps create different kinds of Toasts
@@ -201,11 +201,11 @@ System.registerDynamic("src/toasty.service", ["@angular/core", "./toasty.utils"]
                 return true;
             }
         };
-        // Allowed THEMES
-        ToastyService.THEMES = ['default', 'material', 'bootstrap'];
-        ToastyService = __decorate([core_1.Injectable(), __metadata('design:paramtypes', [ToastyConfig])], ToastyService);
         return ToastyService;
     }();
+    // Allowed THEMES
+    ToastyService.THEMES = ['default', 'material', 'bootstrap'];
+    ToastyService = __decorate([core_1.Injectable(), __metadata("design:paramtypes", [ToastyConfig])], ToastyService);
     exports.ToastyService = ToastyService;
     
 
@@ -358,17 +358,17 @@ System.registerDynamic("src/toasty.component", ["@angular/core", "./toasty.utils
                 _this.clear(toast.id);
             }, toast.timeout);
         };
-        /**
-         * Set of constants defins position of Toasty on the page.
-         */
-        ToastyComponent.POSITIONS = ['bottom-right', 'bottom-left', 'top-right', 'top-left', 'top-center', 'bottom-center', 'center-center'];
-        __decorate([core_1.Input(), __metadata('design:type', String), __metadata('design:paramtypes', [String])], ToastyComponent.prototype, "position", null);
-        ToastyComponent = __decorate([core_1.Component({
-            selector: 'ng2-toasty',
-            template: "\n    <div id=\"toasty\" [ngClass]=\"[position]\">\n        <ng2-toast *ngFor=\"let toast of toasts\" [toast]=\"toast\" (closeToast)=\"closeToast(toast)\"></ng2-toast>\n    </div>"
-        }), __metadata('design:paramtypes', [toasty_service_1.ToastyConfig, toasty_service_1.ToastyService])], ToastyComponent);
         return ToastyComponent;
     }();
+    /**
+     * Set of constants defins position of Toasty on the page.
+     */
+    ToastyComponent.POSITIONS = ['bottom-right', 'bottom-left', 'top-right', 'top-left', 'top-center', 'bottom-center', 'center-center'];
+    __decorate([core_1.Input(), __metadata("design:type", String), __metadata("design:paramtypes", [String])], ToastyComponent.prototype, "position", null);
+    ToastyComponent = __decorate([core_1.Component({
+        selector: 'ng2-toasty',
+        template: "\n    <div id=\"toasty\" [ngClass]=\"[position]\">\n        <ng2-toast *ngFor=\"let toast of toasts\" [toast]=\"toast\" (closeToast)=\"closeToast(toast)\"></ng2-toast>\n    </div>"
+    }), __metadata("design:paramtypes", [toasty_service_1.ToastyConfig, toasty_service_1.ToastyService])], ToastyComponent);
     exports.ToastyComponent = ToastyComponent;
     
 
@@ -409,14 +409,14 @@ System.registerDynamic("src/toast.component", ["@angular/core"], true, function 
             $event.preventDefault();
             this.closeToastEvent.next(this.toast);
         };
-        __decorate([core_1.Input(), __metadata('design:type', Object)], ToastComponent.prototype, "toast", void 0);
-        __decorate([core_1.Output('closeToast'), __metadata('design:type', Object)], ToastComponent.prototype, "closeToastEvent", void 0);
-        ToastComponent = __decorate([core_1.Component({
-            selector: 'ng2-toast',
-            template: "\n        <div class=\"toast\" [ngClass]=\"[toast.type, toast.theme]\">\n            <div *ngIf=\"toast.showClose\" class=\"close-button\" (click)=\"close($event)\"></div>\n            <div *ngIf=\"toast.title || toast.msg\" class=\"toast-text\">\n                <span *ngIf=\"toast.title\" class=\"toast-title\">{{toast.title}}</span>\n                <br *ngIf=\"toast.title && toast.msg\" />\n                <span *ngIf=\"toast.msg\" class=\"toast-msg\">{{toast.msg}}</span>\n            </div>\n        </div>"
-        }), __metadata('design:paramtypes', [])], ToastComponent);
         return ToastComponent;
     }();
+    __decorate([core_1.Input(), __metadata("design:type", Object)], ToastComponent.prototype, "toast", void 0);
+    __decorate([core_1.Output('closeToast'), __metadata("design:type", Object)], ToastComponent.prototype, "closeToastEvent", void 0);
+    ToastComponent = __decorate([core_1.Component({
+        selector: 'ng2-toast',
+        template: "\n        <div class=\"toast\" [ngClass]=\"[toast.type, toast.theme]\">\n            <div *ngIf=\"toast.showClose\" class=\"close-button\" (click)=\"close($event)\"></div>\n            <div *ngIf=\"toast.title || toast.msg\" class=\"toast-text\">\n                <span *ngIf=\"toast.title\" class=\"toast-title\">{{toast.title}}</span>\n                <br *ngIf=\"toast.title && toast.msg\" />\n                <span *ngIf=\"toast.msg\" class=\"toast-msg\">{{toast.msg}}</span>\n            </div>\n        </div>"
+    }), __metadata("design:paramtypes", [])], ToastComponent);
     exports.ToastComponent = ToastComponent;
     
 
@@ -448,29 +448,29 @@ System.registerDynamic("index", ["@angular/core", "@angular/common", "./src/toas
     var common_1 = $__require("@angular/common");
     __export($__require("./src/toasty.service"));
     __export($__require("./src/toasty.component"));
-    var toasty_component_2 = $__require("./src/toasty.component");
+    var toasty_component_1 = $__require("./src/toasty.component");
     var toast_component_1 = $__require("./src/toast.component");
-    var toasty_service_2 = $__require("./src/toasty.service");
+    var toasty_service_1 = $__require("./src/toasty.service");
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.default = {
-        providers: [toasty_service_2.ToastyConfig, toasty_service_2.ToastyService],
-        directives: [toasty_component_2.ToastyComponent, toast_component_1.ToastComponent]
+        providers: [toasty_service_1.ToastyConfig, toasty_service_1.ToastyService],
+        directives: [toasty_component_1.ToastyComponent, toast_component_1.ToastComponent]
     };
     var ToastyModule = function () {
         function ToastyModule() {}
         ToastyModule.forRoot = function () {
             return {
                 ngModule: ToastyModule,
-                providers: [toasty_service_2.ToastyConfig, toasty_service_2.ToastyService]
+                providers: [toasty_service_1.ToastyConfig, toasty_service_1.ToastyService]
             };
         };
-        ToastyModule = __decorate([core_1.NgModule({
-            imports: [common_1.CommonModule],
-            declarations: [toast_component_1.ToastComponent, toasty_component_2.ToastyComponent],
-            exports: [toast_component_1.ToastComponent, toasty_component_2.ToastyComponent]
-        }), __metadata('design:paramtypes', [])], ToastyModule);
         return ToastyModule;
     }();
+    ToastyModule = __decorate([core_1.NgModule({
+        imports: [common_1.CommonModule],
+        declarations: [toast_component_1.ToastComponent, toasty_component_1.ToastyComponent],
+        exports: [toast_component_1.ToastComponent, toasty_component_1.ToastyComponent]
+    }), __metadata("design:paramtypes", [])], ToastyModule);
     exports.ToastyModule = ToastyModule;
     
 

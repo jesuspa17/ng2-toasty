@@ -16,15 +16,15 @@ function __export(m) {
 }
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
-__export(require('./src/toasty.service'));
-__export(require('./src/toasty.component'));
-var toasty_component_2 = require('./src/toasty.component');
-var toast_component_1 = require('./src/toast.component');
-var toasty_service_2 = require('./src/toasty.service');
+__export(require("./src/toasty.service"));
+__export(require("./src/toasty.component"));
+var toasty_component_1 = require("./src/toasty.component");
+var toast_component_1 = require("./src/toast.component");
+var toasty_service_1 = require("./src/toasty.service");
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
-    providers: [toasty_service_2.ToastyConfig, toasty_service_2.ToastyService],
-    directives: [toasty_component_2.ToastyComponent, toast_component_1.ToastComponent]
+    providers: [toasty_service_1.ToastyConfig, toasty_service_1.ToastyService],
+    directives: [toasty_component_1.ToastyComponent, toast_component_1.ToastComponent]
 };
 var ToastyModule = (function () {
     function ToastyModule() {
@@ -32,18 +32,18 @@ var ToastyModule = (function () {
     ToastyModule.forRoot = function () {
         return {
             ngModule: ToastyModule,
-            providers: [toasty_service_2.ToastyConfig, toasty_service_2.ToastyService]
+            providers: [toasty_service_1.ToastyConfig, toasty_service_1.ToastyService]
         };
     };
-    ToastyModule = __decorate([
-        core_1.NgModule({
-            imports: [common_1.CommonModule],
-            declarations: [toast_component_1.ToastComponent, toasty_component_2.ToastyComponent],
-            exports: [toast_component_1.ToastComponent, toasty_component_2.ToastyComponent]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], ToastyModule);
     return ToastyModule;
 }());
+ToastyModule = __decorate([
+    core_1.NgModule({
+        imports: [common_1.CommonModule],
+        declarations: [toast_component_1.ToastComponent, toasty_component_1.ToastyComponent],
+        exports: [toast_component_1.ToastComponent, toasty_component_1.ToastyComponent]
+    }),
+    __metadata("design:paramtypes", [])
+], ToastyModule);
 exports.ToastyModule = ToastyModule;
 //# sourceMappingURL=index.js.map
