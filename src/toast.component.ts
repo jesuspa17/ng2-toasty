@@ -12,14 +12,14 @@ import { ToastData } from './toasty.service';
 @Component({
   selector: 'ng2-toast',
   template: `
-        <div class="toast" [ngClass]="[toast.type, toast.theme]">
-            <div *ngIf="toast.showClose" class="close-button" (click)="close($event)"></div>
-            <div *ngIf="toast.title || toast.msg" class="toast-text">
-                <span *ngIf="toast.title" class="toast-title">{{toast.title}}</span>
-                <br *ngIf="toast.title && toast.msg" />
-                <span *ngIf="toast.msg" class="toast-msg">{{toast.msg}}</span>
-            </div>
-        </div>`
+    <div class="toast" [ngClass]="[toast.type, toast.theme]">
+      <div *ngIf="toast.showClose" class="close-button" (click)="close($event)"></div>
+      <div *ngIf="toast.title || toast.msg" class="toast-text">
+        <span *ngIf="toast.title" class="toast-title">{{toast.title}}</span>
+        <br *ngIf="toast.title && toast.msg" />
+        <span *ngIf="toast.msg" class="toast-msg">{{toast.msg}}</span>
+      </div>
+    </div>`
 })
 export class ToastComponent {
 
