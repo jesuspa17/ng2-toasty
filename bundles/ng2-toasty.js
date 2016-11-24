@@ -367,7 +367,7 @@ System.registerDynamic("src/toasty.component", ["@angular/core", "./toasty.utils
     __decorate([core_1.Input(), __metadata("design:type", String), __metadata("design:paramtypes", [String])], ToastyComponent.prototype, "position", null);
     ToastyComponent = __decorate([core_1.Component({
         selector: 'ng2-toasty',
-        template: "\n    <div id=\"toasty\" [ngClass]=\"[position]\">\n        <ng2-toast *ngFor=\"let toast of toasts\" [toast]=\"toast\" (closeToast)=\"closeToast(toast)\"></ng2-toast>\n    </div>"
+        template: "\n    <div id=\"toasty\" [ngClass]=\"[position]\">\n      <ng2-toast *ngFor=\"let toast of toasts\" [toast]=\"toast\" (closeToast)=\"closeToast(toast)\"></ng2-toast>\n    </div>"
     }), __metadata("design:paramtypes", [toasty_service_1.ToastyConfig, toasty_service_1.ToastyService])], ToastyComponent);
     exports.ToastyComponent = ToastyComponent;
     
@@ -415,7 +415,7 @@ System.registerDynamic("src/toast.component", ["@angular/core"], true, function 
     __decorate([core_1.Output('closeToast'), __metadata("design:type", Object)], ToastComponent.prototype, "closeToastEvent", void 0);
     ToastComponent = __decorate([core_1.Component({
         selector: 'ng2-toast',
-        template: "\n        <div class=\"toast\" [ngClass]=\"[toast.type, toast.theme]\">\n            <div *ngIf=\"toast.showClose\" class=\"close-button\" (click)=\"close($event)\"></div>\n            <div *ngIf=\"toast.title || toast.msg\" class=\"toast-text\">\n                <span *ngIf=\"toast.title\" class=\"toast-title\">{{toast.title}}</span>\n                <br *ngIf=\"toast.title && toast.msg\" />\n                <span *ngIf=\"toast.msg\" class=\"toast-msg\">{{toast.msg}}</span>\n            </div>\n        </div>"
+        template: "\n    <div class=\"toast\" [ngClass]=\"[toast.type, toast.theme]\">\n      <div *ngIf=\"toast.showClose\" class=\"close-button\" (click)=\"close($event)\"></div>\n      <div *ngIf=\"toast.title || toast.msg\" class=\"toast-text\">\n        <span *ngIf=\"toast.title\" class=\"toast-title\">{{toast.title}}</span>\n        <br *ngIf=\"toast.title && toast.msg\" />\n        <span *ngIf=\"toast.msg\" class=\"toast-msg\">{{toast.msg}}</span>\n      </div>\n    </div>"
     }), __metadata("design:paramtypes", [])], ToastComponent);
     exports.ToastComponent = ToastComponent;
     

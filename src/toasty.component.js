@@ -155,7 +155,7 @@ __decorate([
 ToastyComponent = __decorate([
     core_1.Component({
         selector: 'ng2-toasty',
-        template: "\n    <div id=\"toasty\" [ngClass]=\"[position]\">\n        <ng2-toast *ngFor=\"let toast of toasts\" [toast]=\"toast\" (closeToast)=\"closeToast(toast)\"></ng2-toast>\n    </div>"
+        template: "\n    <div id=\"toasty\" [ngClass]=\"[position]\">\n      <ng2-toast *ngFor=\"let toast of toasts\" [toast]=\"toast\" (closeToast)=\"closeToast(toast)\"></ng2-toast>\n    </div>"
     }),
     __metadata("design:paramtypes", [toasty_service_1.ToastyConfig, toasty_service_1.ToastyService])
 ], ToastyComponent);
