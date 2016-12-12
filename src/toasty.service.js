@@ -41,7 +41,7 @@ exports.ToastyConfig = ToastyConfig;
 /**
  * Toasty service helps create different kinds of Toasts
  */
-var ToastyService = (function () {
+var ToastyService = ToastyService_1 = (function () {
     function ToastyService(config) {
         this.config = config;
         // Init the counter
@@ -123,7 +123,7 @@ var ToastyService = (function () {
         // If we have a theme set, make sure it's a valid one
         var theme;
         if (toastyOptions.theme) {
-            theme = ToastyService.THEMES.indexOf(toastyOptions.theme) > -1 ? toastyOptions.theme : this.config.theme;
+            theme = ToastyService_1.THEMES.indexOf(toastyOptions.theme) > -1 ? toastyOptions.theme : this.config.theme;
         }
         else {
             theme = this.config.theme;
@@ -175,9 +175,10 @@ var ToastyService = (function () {
 }());
 // Allowed THEMES
 ToastyService.THEMES = ['default', 'material', 'bootstrap'];
-ToastyService = __decorate([
+ToastyService = ToastyService_1 = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [ToastyConfig])
 ], ToastyService);
 exports.ToastyService = ToastyService;
+var ToastyService_1;
 //# sourceMappingURL=toasty.service.js.map

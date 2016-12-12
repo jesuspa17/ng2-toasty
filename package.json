@@ -30,15 +30,15 @@
   "dependencies": {
     "core-js": "2.4.1",
     "reflect-metadata": "0.1.8",
-    "rxjs": "5.0.0-beta.12",
+    "rxjs": "5.0.0-rc.4",
     "zone.js": "0.7.2"
   },
   "devDependencies": {
-    "@angular/common": "2.1.2",
-    "@angular/compiler": "2.1.2",
-    "@angular/core": "2.1.2",
-    "@angular/platform-browser": "2.1.2",
-    "@angular/platform-browser-dynamic": "2.1.2",
+    "@angular/common": "2.3.0",
+    "@angular/compiler": "2.3.0",
+    "@angular/core": "2.3.0",
+    "@angular/platform-browser": "2.3.0",
+    "@angular/platform-browser-dynamic": "2.3.0",
     "commitizen": "2.8.6",
     "cz-conventional-changelog": "1.2.0",
     "jasmine-core": "2.5.2",
@@ -46,13 +46,13 @@
     "karma-chrome-launcher": "2.0.0",
     "karma-firefox-launcher": "1.0.0",
     "karma-htmlfile-reporter": "0.3.4",
-    "karma-jasmine": "1.0.2",
+    "karma-jasmine": "1.1.0",
     "semantic-release": "6.3.2",
     "systemjs": "0.19.41",
     "systemjs-builder": "0.15.34",
-    "typescript": "2.1.1",
+    "typescript": "2.1.4",
     "typings": "2.0.0",
-    "uglify-js": "2.7.4"
+    "uglify-js": "2.7.5"
   },
   "config": {
     "commitizen": {
