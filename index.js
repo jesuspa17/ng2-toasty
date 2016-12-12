@@ -26,18 +26,18 @@ exports.default = {
     providers: [toasty_service_1.ToastyConfig, toasty_service_1.ToastyService],
     directives: [toasty_component_1.ToastyComponent, toast_component_1.ToastComponent]
 };
-var ToastyModule = (function () {
+var ToastyModule = ToastyModule_1 = (function () {
     function ToastyModule() {
     }
     ToastyModule.forRoot = function () {
         return {
-            ngModule: ToastyModule,
+            ngModule: ToastyModule_1,
             providers: [toasty_service_1.ToastyConfig, toasty_service_1.ToastyService]
         };
     };
     return ToastyModule;
 }());
-ToastyModule = __decorate([
+ToastyModule = ToastyModule_1 = __decorate([
     core_1.NgModule({
         imports: [common_1.CommonModule],
         declarations: [toast_component_1.ToastComponent, toasty_component_1.ToastyComponent],
@@ -46,4 +46,5 @@ ToastyModule = __decorate([
     __metadata("design:paramtypes", [])
 ], ToastyModule);
 exports.ToastyModule = ToastyModule;
+var ToastyModule_1;
 //# sourceMappingURL=index.js.map

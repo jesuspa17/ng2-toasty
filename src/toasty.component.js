@@ -17,7 +17,7 @@ var toasty_service_1 = require("./toasty.service");
 /**
  * Toasty is container for Toast components
  */
-var ToastyComponent = (function () {
+var ToastyComponent = ToastyComponent_1 = (function () {
     function ToastyComponent(config, toastyService) {
         this.config = config;
         this.toastyService = toastyService;
@@ -42,8 +42,8 @@ var ToastyComponent = (function () {
         set: function (value) {
             if (value) {
                 var notFound = true;
-                for (var i = 0; i < ToastyComponent.POSITIONS.length; i++) {
-                    if (ToastyComponent.POSITIONS[i] === value) {
+                for (var i = 0; i < ToastyComponent_1.POSITIONS.length; i++) {
+                    if (ToastyComponent_1.POSITIONS[i] === value) {
                         notFound = false;
                         break;
                     }
@@ -152,7 +152,7 @@ __decorate([
     __metadata("design:type", String),
     __metadata("design:paramtypes", [String])
 ], ToastyComponent.prototype, "position", null);
-ToastyComponent = __decorate([
+ToastyComponent = ToastyComponent_1 = __decorate([
     core_1.Component({
         selector: 'ng2-toasty',
         template: "\n    <div id=\"toasty\" [ngClass]=\"[position]\">\n      <ng2-toast *ngFor=\"let toast of toasts\" [toast]=\"toast\" (closeToast)=\"closeToast(toast)\"></ng2-toast>\n    </div>"
@@ -160,4 +160,5 @@ ToastyComponent = __decorate([
     __metadata("design:paramtypes", [toasty_service_1.ToastyConfig, toasty_service_1.ToastyService])
 ], ToastyComponent);
 exports.ToastyComponent = ToastyComponent;
+var ToastyComponent_1;
 //# sourceMappingURL=toasty.component.js.map
