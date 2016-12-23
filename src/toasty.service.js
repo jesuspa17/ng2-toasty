@@ -1,7 +1,6 @@
 // Copyright (C) 2016 Sergey Akopkokhyants
 // This project is licensed under the terms of the MIT license.
 // https://github.com/akserg/ng2-toasty
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11,8 +10,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var toasty_utils_1 = require("./toasty.utils");
+import { Injectable, EventEmitter } from '@angular/core';
+import { isString, isNumber, isFunction } from './toasty.utils';
+/**
+ * Options to configure specific Toast
+ */
+var ToastOptions = (function () {
+    function ToastOptions() {
+    }
+    return ToastOptions;
+}());
+ToastOptions = __decorate([
+    Injectable(),
+    __metadata("design:paramtypes", [])
+], ToastOptions);
+export { ToastOptions };
+/**
+ * Structrure of Toast
+ */
+var ToastData = (function () {
+    function ToastData() {
+    }
+    return ToastData;
+}());
+ToastData = __decorate([
+    Injectable(),
+    __metadata("design:paramtypes", [])
+], ToastData);
+export { ToastData };
 /**
  * Default configuration foa all toats and toasty container
  */
@@ -34,10 +59,13 @@ var ToastyConfig = (function () {
     return ToastyConfig;
 }());
 ToastyConfig = __decorate([
-    core_1.Injectable(),
+    Injectable(),
     __metadata("design:paramtypes", [])
 ], ToastyConfig);
-exports.ToastyConfig = ToastyConfig;
+export { ToastyConfig };
+export function toastyServiceFactory(config) {
+    return new ToastyService(config);
+}
 /**
  * Toasty service helps create different kinds of Toasts
  */
@@ -47,9 +75,9 @@ var ToastyService = ToastyService_1 = (function () {
         // Init the counter
         this.uniqueCounter = 0;
         // ToastData event emitter
-        this.toastsEmitter = new core_1.EventEmitter();
+        this.toastsEmitter = new EventEmitter();
         // Clear event emitter
-        this.clearEmitter = new core_1.EventEmitter();
+        this.clearEmitter = new EventEmitter();
     }
     /**
      * Get list of toats
@@ -104,7 +132,7 @@ var ToastyService = ToastyService_1 = (function () {
     // Add a new toast item
     ToastyService.prototype.add = function (options, type) {
         var toastyOptions;
-        if (toasty_utils_1.isString(options) && options !== '' || toasty_utils_1.isNumber(options)) {
+        if (isString(options) && options !== '' || isNumber(options)) {
             toastyOptions = {
                 title: options.toString()
             };
@@ -135,8 +163,8 @@ var ToastyService = ToastyService_1 = (function () {
             showClose: showClose,
             type: 'toasty-type-' + type,
             theme: 'toasty-theme-' + theme,
-            onAdd: toastyOptions.onAdd && toasty_utils_1.isFunction(toastyOptions.onAdd) ? toastyOptions.onAdd : null,
-            onRemove: toastyOptions.onRemove && toasty_utils_1.isFunction(toastyOptions.onRemove) ? toastyOptions.onRemove : null
+            onAdd: toastyOptions.onAdd && isFunction(toastyOptions.onAdd) ? toastyOptions.onAdd : null,
+            onRemove: toastyOptions.onRemove && isFunction(toastyOptions.onRemove) ? toastyOptions.onRemove : null
         };
         // If there's a timeout individually or globally, set the toast to timeout
         // Allows a caller to pass null/0 and override the default. Can also set the default to null/0 to turn off.
@@ -145,7 +173,7 @@ var ToastyService = ToastyService_1 = (function () {
         // this.toastsSubscriber.next(toast);
         this.toastsEmitter.next(toast);
         // If we have a onAdd function, call it here
-        if (toastyOptions.onAdd && toasty_utils_1.isFunction(toastyOptions.onAdd)) {
+        if (toastyOptions.onAdd && isFunction(toastyOptions.onAdd)) {
             toastyOptions.onAdd.call(this, toast);
         }
         return toast.id;
@@ -176,9 +204,8 @@ var ToastyService = ToastyService_1 = (function () {
 // Allowed THEMES
 ToastyService.THEMES = ['default', 'material', 'bootstrap'];
 ToastyService = ToastyService_1 = __decorate([
-    core_1.Injectable(),
+    Injectable(),
     __metadata("design:paramtypes", [ToastyConfig])
 ], ToastyService);
-exports.ToastyService = ToastyService;
+export { ToastyService };
 var ToastyService_1;
-//# sourceMappingURL=toasty.service.js.map

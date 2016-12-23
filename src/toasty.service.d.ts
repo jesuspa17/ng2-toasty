@@ -2,7 +2,7 @@ import { Observable } from 'rxjs/Observable';
 /**
  * Options to configure specific Toast
  */
-export interface ToastOptions {
+export declare class ToastOptions {
     title: string;
     msg?: string;
     showClose?: boolean;
@@ -14,7 +14,7 @@ export interface ToastOptions {
 /**
  * Structrure of Toast
  */
-export interface ToastData {
+export declare class ToastData {
     id: number;
     title: string;
     msg: string;
@@ -36,6 +36,7 @@ export declare class ToastyConfig {
     timeout: number;
     theme: string;
 }
+export declare function toastyServiceFactory(config: ToastyConfig): ToastyService;
 /**
  * Toasty service helps create different kinds of Toasts
  */

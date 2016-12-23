@@ -1,7 +1,6 @@
 // Copyright (C) 2016 Sergey Akopkokhyants
 // This project is licensed under the terms of the MIT license.
 // https://github.com/akserg/ng2-toasty
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -11,9 +10,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var toasty_utils_1 = require("./toasty.utils");
-var toasty_service_1 = require("./toasty.service");
+import { Component, Input } from '@angular/core';
+import { isFunction } from './toasty.utils';
+import { ToastyService, ToastyConfig } from './toasty.service';
 /**
  * Toasty is container for Toast components
  */
@@ -89,8 +88,10 @@ var ToastyComponent = ToastyComponent_1 = (function () {
             if (id) {
                 _this.clear(id);
             }
-            // Lets clear all toasts
-            _this.clearAll();
+            else {
+                // Lets clear all toasts
+                _this.clearAll();
+            }
         });
     };
     /**
@@ -109,7 +110,7 @@ var ToastyComponent = ToastyComponent_1 = (function () {
         if (id) {
             this.toasts.forEach(function (value, key) {
                 if (value.id === id) {
-                    if (value.onRemove && toasty_utils_1.isFunction(value.onRemove)) {
+                    if (value.onRemove && isFunction(value.onRemove)) {
                         value.onRemove.call(_this, value);
                     }
                     _this.toasts.splice(key, 1);
@@ -126,7 +127,7 @@ var ToastyComponent = ToastyComponent_1 = (function () {
     ToastyComponent.prototype.clearAll = function () {
         var _this = this;
         this.toasts.forEach(function (value, key) {
-            if (value.onRemove && toasty_utils_1.isFunction(value.onRemove)) {
+            if (value.onRemove && isFunction(value.onRemove)) {
                 value.onRemove.call(_this, value);
             }
         });
@@ -148,17 +149,16 @@ var ToastyComponent = ToastyComponent_1 = (function () {
  */
 ToastyComponent.POSITIONS = ['bottom-right', 'bottom-left', 'top-right', 'top-left', 'top-center', 'bottom-center', 'center-center'];
 __decorate([
-    core_1.Input(),
+    Input(),
     __metadata("design:type", String),
     __metadata("design:paramtypes", [String])
 ], ToastyComponent.prototype, "position", null);
 ToastyComponent = ToastyComponent_1 = __decorate([
-    core_1.Component({
+    Component({
         selector: 'ng2-toasty',
         template: "\n    <div id=\"toasty\" [ngClass]=\"[position]\">\n      <ng2-toast *ngFor=\"let toast of toasts\" [toast]=\"toast\" (closeToast)=\"closeToast(toast)\"></ng2-toast>\n    </div>"
     }),
-    __metadata("design:paramtypes", [toasty_service_1.ToastyConfig, toasty_service_1.ToastyService])
+    __metadata("design:paramtypes", [ToastyConfig, ToastyService])
 ], ToastyComponent);
-exports.ToastyComponent = ToastyComponent;
+export { ToastyComponent };
 var ToastyComponent_1;
-//# sourceMappingURL=toasty.component.js.map
