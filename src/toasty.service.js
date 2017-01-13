@@ -21,8 +21,7 @@ var ToastOptions = (function () {
     return ToastOptions;
 }());
 ToastOptions = __decorate([
-    Injectable(),
-    __metadata("design:paramtypes", [])
+    Injectable()
 ], ToastOptions);
 export { ToastOptions };
 /**
@@ -34,8 +33,7 @@ var ToastData = (function () {
     return ToastData;
 }());
 ToastData = __decorate([
-    Injectable(),
-    __metadata("design:paramtypes", [])
+    Injectable()
 ], ToastData);
 export { ToastData };
 /**
@@ -59,8 +57,7 @@ var ToastyConfig = (function () {
     return ToastyConfig;
 }());
 ToastyConfig = __decorate([
-    Injectable(),
-    __metadata("design:paramtypes", [])
+    Injectable()
 ], ToastyConfig);
 export { ToastyConfig };
 export function toastyServiceFactory(config) {
