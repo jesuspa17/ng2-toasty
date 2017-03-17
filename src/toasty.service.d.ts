@@ -1,7 +1,4 @@
 import { Observable } from 'rxjs/Observable';
-/**
- * Options to configure specific Toast
- */
 export declare class ToastOptions {
     title: string;
     msg?: string;
@@ -11,9 +8,6 @@ export declare class ToastOptions {
     onAdd?: Function;
     onRemove?: Function;
 }
-/**
- * Structrure of Toast
- */
 export declare class ToastData {
     id: number;
     title: string;
@@ -26,9 +20,6 @@ export declare class ToastData {
     onRemove: Function;
     onClick: Function;
 }
-/**
- * Default configuration foa all toats and toasty container
- */
 export declare class ToastyConfig {
     limit: number;
     showClose: boolean;
@@ -37,9 +28,6 @@ export declare class ToastyConfig {
     theme: string;
 }
 export declare function toastyServiceFactory(config: ToastyConfig): ToastyService;
-/**
- * Toasty service helps create different kinds of Toasts
- */
 export declare class ToastyService {
     private config;
     static THEMES: Array<string>;
@@ -47,39 +35,13 @@ export declare class ToastyService {
     private toastsEmitter;
     private clearEmitter;
     constructor(config: ToastyConfig);
-    /**
-     * Get list of toats
-     */
     getToasts(): Observable<ToastData>;
     getClear(): Observable<number>;
-    /**
-     * Create Toast of a default type
-     */
     default(options: ToastOptions | string | number): number;
-    /**
-     * Create Toast of info type
-     * @param  {object} options Individual toasty config overrides
-     */
     info(options: ToastOptions | string | number): number;
-    /**
-     * Create Toast of success type
-     * @param  {object} options Individual toasty config overrides
-     */
     success(options: ToastOptions | string | number): number;
-    /**
-     * Create Toast of wait type
-     * @param  {object} options Individual toasty config overrides
-     */
     wait(options: ToastOptions | string | number): number;
-    /**
-     * Create Toast of error type
-     * @param  {object} options Individual toasty config overrides
-     */
     error(options: ToastOptions | string | number): number;
-    /**
-     * Create Toast of warning type
-     * @param  {object} options Individual toasty config overrides
-     */
     warning(options: ToastOptions | string | number): number;
     private add(options, type);
     clearAll(): void;
